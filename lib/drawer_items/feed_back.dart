@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../const.dart';
 import '../strings.dart';
+import '../utils.dart';
 
 class FeedBack extends StatelessWidget {
   static const String routeName = '/feedBack';
@@ -28,18 +29,24 @@ class FeedBack extends StatelessWidget {
                   SizedBox(
                       width: double.infinity,
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () =>
+                            UtilsFeedBack.openPhoneCall(phoneNumber: '+79278147106'),
                         child: Text(Strings.feed_back_call),
-                        style: ButtonStyle(elevation: MaterialStateProperty.all(8)),
+                        style: ButtonStyle(
+                            elevation: MaterialStateProperty.all(8)),
                       )),
                   SizedBox(height: 10),
                   SizedBox(
                       width: double.infinity,
                       child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () => UtilsFeedBack.openEmail(
+                            toEmail: 'irina.pro84@mail.ru',
+                            subject: 'Hello, World',
+                            body: 'This works great!'
+                          ),
                           child: Text(Strings.feed_back_write),
-                          style:
-                          ButtonStyle(elevation: MaterialStateProperty.all(8))))
+                          style: ButtonStyle(
+                              elevation: MaterialStateProperty.all(8))))
                 ],
               ),
             ),
