@@ -77,7 +77,7 @@ Widget personalDateList({String? text}) {
         ),
       ),
       const SizedBox(height: 10),
-      const Divider(height: 2, thickness: 2,),
+      const Divider(height: 2, thickness: 2),
       const SizedBox(height: 10),
     ],
 

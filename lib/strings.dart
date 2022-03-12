@@ -23,10 +23,32 @@ class Strings {
   static const profile = 'Анкета';
   static const save = 'Сохранить';
 
-
 // Feed Back
   static const feed_back_text =
       'Мы хотим, чтобы совершать покупки в наших магазинах было удобно и приятно. Поделитесь с нами Вашими впечатлениями и идеями. \nМы всегда открыты для Ваших предложений!';
   static const feed_back_call = 'Позвонить';
   static const feed_back_write = 'Написать';
+
+  // my_contacts
+  static const contacts = 'Контакты';
+  static const changeNumberPhone = 'Изменить номер телефона';
+  static const changeEmail = 'Изменить электронную почту';
+  static const numberPhone = '+7-927-814-71-06';
+  static const email = 'irina.pro84@mail.ru';
+  static const managementSubscription = 'Управление подписками';
+  static const SMS = 'SMS';
+  static const Email = 'E-mail';
+  static const Push = 'Push';
+  static const Viber = 'Viber';
+
+  // ChangeNumberScreen
+  static const changeNumber = 'Изменение номера';
+  static const newNumberPhone = 'Введите новый номер телефона';
+  static const labelTextNumberPhone = '+7(999) 999-99-99';
+  static const saveNumberPhone = 'Продолжить';
+
+  // ChangeEmailScreen
+  static const newEmail = 'Введите новый e-mail';
+
+
 }

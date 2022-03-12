@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "820036161046",
+    "project_id": "gulliver-343813",
+    "storage_bucket": "gulliver-343813.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:820036161046:android:87b85f07263cad48836f37",
+        "android_client_info": {
+          "package_name": "com.example.gulliver"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "820036161046-gsc0enrdc39q4qa0v3aqmpd8af9ers64.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.gulliver",
+            "certificate_hash": "6ff1ccdcb8f66a86dc7549aa2f3e482d13c99850"
+          }
+        },
+        {
+          "client_id": "820036161046-7iepeouuhqcjupq3tokbj39vmdimd4ch.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_00mNekOEGB2BPZR2k0-AlORQiXVuOuQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "820036161046-7iepeouuhqcjupq3tokbj39vmdimd4ch.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

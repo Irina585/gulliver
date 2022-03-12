@@ -7,7 +7,7 @@ class UtilsFeedBack {
     }
   }
 
-  static openPhoneCall({required String phoneNumber}) async {
+  static Future openPhoneCall({required String phoneNumber}) async {
     final url = 'tel:$phoneNumber';
     await _launchUrl(url);
   }

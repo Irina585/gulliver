@@ -7,6 +7,8 @@ import 'drawer_items/alerts.dart';
 import 'drawer_items/exit.dart';
 import 'drawer_items/feed_back.dart';
 import 'drawer_items/personal_date/card_management.dart';
+import 'drawer_items/personal_date/change_email.dart';
+import 'drawer_items/personal_date/change_number.dart';
 import 'drawer_items/personal_date/change_pin_code.dart';
 import 'drawer_items/personal_date/go_out.dart';
 import 'drawer_items/personal_date/my_contacts.dart';
@@ -56,6 +58,8 @@ class MyApp extends StatelessWidget {
         '/changePinCode': (context) => const ChangePinCode(),
         '/cardManagement': (context) => const CardManagement(),
         '/goOut': (context) => const GoOut(),
+        '/changeNumber': (context) => const ChangeNumberScreen(),
+        '/changeEmail': (context) => const ChangeEmailScreen(),
       },
     );
   }

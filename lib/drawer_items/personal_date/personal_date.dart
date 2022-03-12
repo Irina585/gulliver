@@ -26,22 +26,22 @@ class PersonalDate extends StatelessWidget {
             const SizedBox(height: 20),
             _createItemListPersonalData(
                 icon: Icons.contacts,
-                text_1: Strings.my_contacts,
+                text: Strings.my_contacts,
                 onTap: () => Navigator.pushNamed(context, '/my_contacts')),
             const SizedBox(height: 20),
             _createItemListPersonalData(
                 icon: Icons.password,
-                text_1: Strings.changePinCode,
+                text: Strings.changePinCode,
                 onTap: () => Navigator.pushNamed(context, '/changePinCode')),
             const SizedBox(height: 20),
             _createItemListPersonalData(
                 icon: Icons.credit_card,
-                text_1: Strings.cardManagement,
+                text: Strings.cardManagement,
                 onTap: () => Navigator.pushNamed(context, '/cardManagement')),
             const SizedBox(height: 20),
             _createItemListPersonalData(
                 icon: Icons.exit_to_app_rounded,
-                text_1: Strings.goOut,
+                text: Strings.goOut,
                 onTap: () => Navigator.pushNamed(context, '/goOut')),
           ],
         ));
@@ -50,12 +50,12 @@ class PersonalDate extends StatelessWidget {
 
 // макет пункта списка
 Widget _createItemListPersonalData({IconData? icon,
-  String? text_1,
+  String? text,
   GestureTapCallback? onTap}) {
   return ListTile(
     dense: true,
     leading: Icon(icon, color: mainColors, size: 30),
-    title: Text(text_1!, style: mainTextStyle_15),
+    title: Text(text!, style: mainTextStyle_15),
     onTap: onTap,
   );
 }
