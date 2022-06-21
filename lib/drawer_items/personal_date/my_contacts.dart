@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../const.dart';
-import '../../strings.dart';
+import '../../components/const.dart';
+import '../../components/strings.dart';
 
 class MyContacts extends StatefulWidget {
   static const String routeName = '/my_contacts';
@@ -13,7 +13,6 @@ class MyContacts extends StatefulWidget {
 }
 
 class _MyContactsState extends State<MyContacts> {
-
   bool _subscriptionSms = true;
   bool _subscriptionEmail = true;
   bool _subscriptionPush = true;
@@ -24,16 +23,19 @@ class _MyContactsState extends State<MyContacts> {
       _subscriptionSms = value1;
     });
   }
+
   void onSubscriptionChange2(bool value2) {
     setState(() {
       _subscriptionEmail = value2;
     });
   }
+
   void onSubscriptionChange3(bool value3) {
     setState(() {
       _subscriptionPush = value3;
     });
   }
+
   void onSubscriptionChange4(bool value4) {
     setState(() {
       _subscriptionViber = value4;
@@ -66,10 +68,14 @@ class _MyContactsState extends State<MyContacts> {
               SizedBox(height: 20),
               Text(Strings.managementSubscription),
               SizedBox(height: 20),
-              _createSwitchItem(Icons.textsms, Strings.SMS, _subscriptionSms, onSubscriptionChange1),
-              _createSwitchItem(Icons.email, Strings.Email, _subscriptionEmail, onSubscriptionChange2),
-              _createSwitchItem(Icons.chat_bubble, Strings.Push, _subscriptionPush, onSubscriptionChange3),
-              _createSwitchItem(Icons.phonelink_ring, Strings.Viber, _subscriptionViber, onSubscriptionChange4)
+              _createSwitchItem(Icons.textsms, Strings.SMS, _subscriptionSms,
+                  onSubscriptionChange1),
+              _createSwitchItem(Icons.email, Strings.Email, _subscriptionEmail,
+                  onSubscriptionChange2),
+              _createSwitchItem(Icons.chat_bubble, Strings.Push,
+                  _subscriptionPush, onSubscriptionChange3),
+              _createSwitchItem(Icons.phonelink_ring, Strings.Viber,
+                  _subscriptionViber, onSubscriptionChange4)
             ],
           ),
         ));
@@ -89,8 +95,8 @@ Widget _createContactItem(
 }
 
 // макет контакта
-Widget _createSwitchItem(IconData? icon, String text, bool val, Function onSubscriptionChange) {
-
+Widget _createSwitchItem(
+    IconData? icon, String text, bool val, Function onSubscriptionChange) {
   return Padding(
     padding: const EdgeInsets.only(top: 22, left: 16, right: 16),
     child: Row(
@@ -106,11 +112,9 @@ Widget _createSwitchItem(IconData? icon, String text, bool val, Function onSubsc
             value: val,
             onChanged: (value) {
               onSubscriptionChange(value);
-            }
-        )
+            })
         //secondary: Icon(icon, color: mainColors, size: 30),
       ],
     ),
   );
 }
-

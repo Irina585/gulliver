@@ -50,5 +50,19 @@ class Strings {
   // ChangeEmailScreen
   static const newEmail = 'Введите новый e-mail';
 
+  // shopping_lists
+  static const buyInGulliver = 'Купить в Гулливере';
+  static const addProduct = 'Добавить продукт';
+  static const nameProduct = 'Название';
+  static const numberOfProducts = 'Количество';
+  static const cleanListProducts = 'ОЧИСТИТЬ СПИСОК';
 
+  static const promotionPicNicDescription =
+      'Соберите коллекцию ножей и товаров для пикника';
+  static const promotionPicNicLink =
+      'https://www.gulliver-ul.ru/images/%D0%9F%D0%BB%D0%B0%D0%BA%D0%B0%D1%82.jpg';
+  static const promotionPicNicPeriod = 'С 28 апреля по 31 июля';
+
+  static const String error = 'Ошибка';
+  static const String unknown = 'Неизвестно';
 }

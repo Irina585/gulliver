@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../const.dart';
-import '../../strings.dart';
+import '../../components/const.dart';
+import '../../components/strings.dart';
 
 class ChangeEmailScreen extends StatefulWidget {
-
   static const String routeName = '/changeEmail';
 
   const ChangeEmailScreen({Key? key}) : super(key: key);
@@ -14,7 +13,6 @@ class ChangeEmailScreen extends StatefulWidget {
 }
 
 class _ChangeEmailScreenState extends State<ChangeEmailScreen> {
-
   final emailTextController = TextEditingController();
 
   @override
@@ -44,7 +42,9 @@ class _ChangeEmailScreenState extends State<ChangeEmailScreen> {
             child: Row(
               children: [
                 Icon(Icons.email, color: mainColors),
-                SizedBox(width: 20,),
+                SizedBox(
+                  width: 20,
+                ),
                 Expanded(
                   child: TextField(
                     autofocus: true,
@@ -67,12 +67,10 @@ class _ChangeEmailScreenState extends State<ChangeEmailScreen> {
                       return AlertDialog(
                         content: Text(emailTextController.text),
                       );
-                    }
-                );
+                    });
               },
               child: Text(Strings.saveNumberPhone),
-              style: ButtonStyle(
-                  elevation: MaterialStateProperty.all(8)))
+              style: ButtonStyle(elevation: MaterialStateProperty.all(8)))
         ],
       ),
     );

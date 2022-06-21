@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../strings.dart';
+import '../../components/strings.dart';
 
 class CardManagement extends StatelessWidget {
-
   static const String routeName = '/cardManagement';
 
   const CardManagement({Key? key}) : super(key: key);
@@ -14,7 +13,6 @@ class CardManagement extends StatelessWidget {
         appBar: AppBar(
           title: const Text(Strings.cardManagement),
         ),
-        body: Container()
-    );
+        body: Container());
   }
 }

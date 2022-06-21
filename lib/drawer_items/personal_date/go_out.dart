@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../strings.dart';
+import '../../components/strings.dart';
 
 class GoOut extends StatelessWidget {
-
   static const String routeName = '/goOut';
 
   const GoOut({Key? key}) : super(key: key);
@@ -14,7 +13,6 @@ class GoOut extends StatelessWidget {
         appBar: AppBar(
           title: const Text(Strings.goOut),
         ),
-        body: Container()
-    );
+        body: Container());
   }
 }

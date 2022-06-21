@@ -1,26 +1,36 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:gulliver/const.dart';
+import 'package:gulliver/components/const.dart';
 import 'package:barcode_widget/barcode_widget.dart';
-import 'package:gulliver/strings.dart';
-
-import '../drawer.dart';
+import 'package:gulliver/components/strings.dart';
 
 // Моя ЧУДОкарта
 
 class MiracleCard extends StatelessWidget {
-
   static const String routeName = '/miracleCard';
 
-  const MiracleCard({Key? key}) : super(key: key);
+  final Function? openDrawer;
+
+  const MiracleCard({
+    Key? key,
+    this.openDrawer,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text(Strings.miracleCard),
+        leading: Builder(
+          builder: (BuildContext context) {
+            return IconButton(
+                onPressed: () {
+                  openDrawer!();
+                },
+                icon: Icon(Icons.menu));
+          },
+        ),
       ),
-      drawer: const BuildDrawer(),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -28,14 +38,17 @@ class MiracleCard extends StatelessWidget {
           paySection,
           cardBalance,
           Padding(
-            padding: const EdgeInsets.only(top: 15, left: 8, right: 8, bottom: 8),
+            padding:
+                const EdgeInsets.only(top: 15, left: 8, right: 8, bottom: 8),
             child: Column(
               children: [
                 Row(
                   children: const [
-                    Expanded(child: Text('Категория карты:', style: forwardTextStyle)),
-                   Text('Карта сотрудника',
-                            style: TextStyle(fontSize: 16, color: Colors.red))
+                    Expanded(
+                        child:
+                            Text('Категория карты:', style: forwardTextStyle)),
+                    Text('Карта сотрудника',
+                        style: TextStyle(fontSize: 16, color: Colors.red))
                   ],
                 ),
                 Divider(
@@ -54,7 +67,7 @@ class MiracleCard extends StatelessWidget {
                       ),
                     ),
                     Text('7%',
-                            style: TextStyle(fontSize: 18, color: Colors.red))
+                        style: TextStyle(fontSize: 18, color: Colors.red))
                   ],
                 )
               ],
@@ -73,7 +86,7 @@ Widget miracleCard = Container(
 
 Widget paySection = Container(
   decoration: BoxDecoration(
-      color: Colors.grey[300], borderRadius: BorderRadius.circular(12)),
+      color: Colors.grey[200], borderRadius: BorderRadius.circular(12)),
   margin: const EdgeInsets.only(left: 8, right: 8),
   height: 175,
   child: Column(
@@ -89,20 +102,12 @@ Widget paySection = Container(
                 style: forwardTextStyle,
               ),
             ),
-            Container(
-                  alignment: Alignment.topRight,
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(8)),
-                  padding: const EdgeInsets.all(4),
-                  width: 100,
-                  height: 40,
-                  child: ElevatedButton(
-                      onPressed: () {},
-                      child: Image.asset(
-                        'assets/google_pay.png',
-                        fit: BoxFit.cover,
-                      )),
+            TextButton(
+              onPressed: () {},
+              child: Text('GPay'),
+              style: ButtonStyle(
+                  backgroundColor:
+                      MaterialStateProperty.all(Colors.orange[200])),
             )
           ],
         ),
@@ -132,7 +137,7 @@ Widget paySection = Container(
 
 Widget cardBalance = Container(
   decoration: BoxDecoration(
-      color: Colors.grey[300], borderRadius: BorderRadius.circular(12)),
+      color: Colors.grey[200], borderRadius: BorderRadius.circular(12)),
   margin: const EdgeInsets.only(top: 8, left: 8, right: 8),
   height: 130,
   child: Padding(
@@ -149,9 +154,9 @@ Widget cardBalance = Container(
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: const [
-             Expanded(child: Text('Бонусы', style: balanceTextStyle)),
+            Expanded(child: Text('Бонусы', style: balanceTextStyle)),
             Text('1 489.00',
-                style:  TextStyle(fontSize: 18, fontWeight: FontWeight.bold))
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold))
           ],
         ),
         const SizedBox(height: 17),

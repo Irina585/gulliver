@@ -3,21 +3,43 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-import '../../strings.dart';
+import '../components/strings.dart';
 
-class Supermarkets extends StatefulWidget {
-
+class Supermarkets extends StatelessWidget {
   static const String routeName = '/supermarkets';
 
+  final Function? openDrawer;
+
+  const Supermarkets({Key? key, this.openDrawer}) : super(key: key);
 
   @override
-  State<Supermarkets> createState() => _SupermarketsState();
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: const Text(Strings.supermarkets),
+          leading: Builder(
+            builder: (BuildContext context) {
+              return IconButton(
+                  onPressed: () {
+                    openDrawer!();
+                  },
+                  icon: Icon(Icons.menu));
+            },
+          ),
+        ),
+        body: SupermarketsMap());
+  }
 }
 
-class _SupermarketsState extends State<Supermarkets> {
+class SupermarketsMap extends StatefulWidget {
+  late final Function? openDrawer;
 
+  @override
+  State<SupermarketsMap> createState() => _SupermarketsMapState();
+}
+
+class _SupermarketsMapState extends State<SupermarketsMap> {
   Completer<GoogleMapController> _controller = Completer();
-
 
   static final CameraPosition _kGooglePlex = CameraPosition(
     target: LatLng(37.42796133580664, -122.085749655962),
@@ -29,8 +51,7 @@ class _SupermarketsState extends State<Supermarkets> {
       markerId: MarkerId('_kGooglePlex'),
       infoWindow: InfoWindow(title: 'Google Plex'),
       icon: BitmapDescriptor.defaultMarker,
-      position: LatLng(37.42796133580664, -122.085749655962)
-  );
+      position: LatLng(37.42796133580664, -122.085749655962));
 
   static final CameraPosition _kLake = CameraPosition(
       bearing: 192.8334901395799,
@@ -42,22 +63,16 @@ class _SupermarketsState extends State<Supermarkets> {
   static final Marker _kLakeMarker = Marker(
       markerId: MarkerId('_kLakeMarker'),
       infoWindow: InfoWindow(title: 'Lake'), // наименование объекта
-      icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueBlue), // цвет маркера синий
-      position: LatLng(37.43296265331129, -122.08832357078792)
-  );
+      icon: BitmapDescriptor.defaultMarkerWithHue(
+          BitmapDescriptor.hueBlue), // цвет маркера синий
+      position: LatLng(37.43296265331129, -122.08832357078792));
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(Strings.supermarkets),
-      ),
       body: GoogleMap(
         mapType: MapType.normal,
-        markers: {
-          _kGooglePlexMarker,
-          _kLakeMarker
-        },
+        markers: {_kGooglePlexMarker, _kLakeMarker},
         initialCameraPosition: _kGooglePlex,
         onMapCreated: (GoogleMapController controller) {
           _controller.complete(controller);

@@ -1,18 +1,29 @@
 import 'package:flutter/material.dart';
 
-import '../../const.dart';
-import '../../strings.dart';
+import '../../components/const.dart';
+import '../../components/strings.dart';
 
 class PersonalDate extends StatelessWidget {
   static const String routeName = '/personalDate';
 
-  const PersonalDate({Key? key}) : super(key: key);
+  final Function? openDrawer;
+
+  const PersonalDate({Key? key, this.openDrawer}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           title: const Text(Strings.personalDate),
+          leading: Builder(
+            builder: (BuildContext context) {
+              return IconButton(
+                  onPressed: () {
+                    openDrawer!();
+                  },
+                  icon: Icon(Icons.menu));
+            },
+          ),
         ),
         body: ListView(
           children: [
@@ -49,9 +60,8 @@ class PersonalDate extends StatelessWidget {
 }
 
 // макет пункта списка
-Widget _createItemListPersonalData({IconData? icon,
-  String? text,
-  GestureTapCallback? onTap}) {
+Widget _createItemListPersonalData(
+    {IconData? icon, String? text, GestureTapCallback? onTap}) {
   return ListTile(
     dense: true,
     leading: Icon(icon, color: mainColors, size: 30),
@@ -59,5 +69,3 @@ Widget _createItemListPersonalData({IconData? icon,
     onTap: onTap,
   );
 }
-
-

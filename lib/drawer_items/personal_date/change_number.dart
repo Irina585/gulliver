@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../const.dart';
-import '../../strings.dart';
+import '../../components/const.dart';
+import '../../components/strings.dart';
 
 class ChangeNumberScreen extends StatefulWidget {
-
   static const String routeName = '/changeNumber';
 
   const ChangeNumberScreen({Key? key}) : super(key: key);
@@ -14,7 +13,6 @@ class ChangeNumberScreen extends StatefulWidget {
 }
 
 class _ChangeNumberScreenState extends State<ChangeNumberScreen> {
-
   final numberPhoneTextController = TextEditingController();
 
   @override
@@ -44,7 +42,9 @@ class _ChangeNumberScreenState extends State<ChangeNumberScreen> {
             child: Row(
               children: [
                 Icon(Icons.call, color: mainColors),
-                SizedBox(width: 20,),
+                SizedBox(
+                  width: 20,
+                ),
                 Text('+7', style: mainTextStyle_17),
                 Expanded(
                   child: TextField(
@@ -68,12 +68,10 @@ class _ChangeNumberScreenState extends State<ChangeNumberScreen> {
                       return AlertDialog(
                         content: Text(numberPhoneTextController.text),
                       );
-                    }
-                );
+                    });
               },
               child: Text(Strings.saveNumberPhone),
-              style: ButtonStyle(
-                  elevation: MaterialStateProperty.all(8)))
+              style: ButtonStyle(elevation: MaterialStateProperty.all(8)))
         ],
       ),
     );

@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../strings.dart';
+import '../../components/strings.dart';
 
 class ChangePinCode extends StatelessWidget {
-
   static const String routeName = '/changePinCode';
 
   const ChangePinCode({Key? key}) : super(key: key);
@@ -14,7 +13,6 @@ class ChangePinCode extends StatelessWidget {
         appBar: AppBar(
           title: const Text(Strings.changePinCode),
         ),
-        body: Container()
-    );
+        body: Container());
   }
 }
