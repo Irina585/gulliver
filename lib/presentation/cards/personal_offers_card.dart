@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 
 import '../../models/personal_offers_card_model.dart';
@@ -12,11 +10,11 @@ class PersonalOffersCard extends StatelessWidget {
   final String? discount;
   const PersonalOffersCard(
       {Key? key,
-        this.id,
-        this.picture,
-        this.description,
-        this.offersPeriod,
-        this.discount})
+      this.id,
+      this.picture,
+      this.description,
+      this.offersPeriod,
+      this.discount})
       : super(key: key);
 
   factory PersonalOffersCard.fromModel({
@@ -35,7 +33,7 @@ class PersonalOffersCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
+      padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 10),
       child: DecoratedBox(
         decoration: BoxDecoration(
           color: Colors.white,
